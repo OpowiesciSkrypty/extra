@@ -53,18 +53,9 @@ if ask_question "Configure additional elements?"; then
 fi
 read -rsn1 -p "Press Enter to continue..."
 clear
-printf "\e[34m%s\e[0m\n" "Debian Configuration"
-
-if ask_question "Configure system language?"; then
-    lang=true
-fi
-read -rsn1 -p "Press Enter to continue..."
 
 # Running appropriate scripts
-if [[ $lang ]]; then
-    echo "Running lang.sh"
-    ./lang.sh
-fi
+
 if [[ $codecs ]]; then
     echo "Running codecs.sh"
     ./codecs.sh
